@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Hamburger</title>
+    <style>
+        .body{
+            font-family: sans-serif;
+        }
+        .gray{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(100, 98, 98, 0.05);
+            z-index: -1;
+        }
+        h2{
+            position: absolute;
+            color: red;
+            font-size: 3rem; 
+            top: 80px;
+            left: 90px;
+        }
+        .total{
+            color: rgb(5, 249, 5);
+        }
+        .order{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .container{
+            margin: 0 auto;
+            display: flex;
+            width: 100%;
+            height: 690px;
+            gap: 100px;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+        }
+        .control{
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+        button{
+            padding: 10px;
+            font-size: 2rem;
+            border-radius: 10px;
+            border: 4px solid rgb(250, 9, 9);
+        }
+        button:hover{
+            background-color: rgb(4, 253, 4);
+            border: 4px solid rgb(205, 34, 205);
+        }
+        button:active{
+            background-color:rgba(253, 135, 253, 0.813) ;
+            border: 4px solid red;
+            transition: all 0.2s ease-in-out;
+            color: red;
+        }
+        .bread{
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .layers{
+            width: 400px;
+            height: 90px;
+            margin-top: -60px;
+            margin-left:40px;
+        }
+        .layers[data-product= "onion"]{
+            background-image: url(./burger-layers/onion.svg);
+            background-repeat: no-repeat;
+            background-size: 100% or 200%;
+        }
+        .layers[data-product= "meat"]{
+            background-image: url(./burger-layers/meat.svg);
+            background-repeat: no-repeat;
+            background-size: 100% or 200%;
+
+        }
+        .layers[data-product= "cheese"]{
+            background-image: url(./burger-layers/cheese.svg);
+            background-repeat: no-repeat;
+            height: 70px;
+            background-size: 100% or 200%;
+        }
+        .layers[data-product= "pickle"]{
+            background-image: url(./burger-layers/pickle.svg);
+            background-repeat: no-repeat;
+            margin-left: 90px;
+            background-size: 100% or 200%;
+        }
+        .layers[data-product= "salad"]{
+            background-image: url(./burger-layers/salad.svg);
+            background-repeat: no-repeat;
+            background-size: 100% or 200%;
+            margin-bottom: -20px;
+        }
+        .layers[data-product= "tomato"]{
+            background-image: url(./burger-layers/tomato.svg);
+            background-repeat: no-repeat;
+            background-size: 100% or 200%;
+        }
+        .top{
+            background-image: url(./burger-layers/top-bread.svg);
+            height:90px;
+            width: 400px;
+            z-index: 999;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .bottom{
+            background-image: url(./burger-layers/bottom-bread.svg);
+            height: 90px;
+            width: 400px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 999;
+        }
+        .orderbtn{
+            margin-top: 20px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -2;
+        }
+    </style>
+</head>
+    <body>
+        <div><img src="./pexels-rajesh-tp-1600727.jpg" alt="picture"></div>
+        <div class="container">
+            <div class="bread">
+                <div class="top"></div>
+                <div class="control"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="buttons">
+                <button id="cheese">Cheese</button>
+                <button id="meat">Meat</button>
+                <button id="onion">Onion</button>
+                <button id="pickle">Pickle</button>
+                <button id="salad">Salad</button>
+                <button id="tomato">Tomato</button>
+                <div class="orderbtn">
+                    <div class="order">
+                        <h2>$</h2>
+                        <button id="order">Order</button>
+                        <button id="reset">Reset</button>
+                    </div>
+                    <div class="total"><h1></h1></div>
+                </div>
+            </div>
+        </div> 
+        <script src="app.js"></script>   
+    </body>
+</html>
